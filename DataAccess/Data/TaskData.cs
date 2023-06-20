@@ -19,23 +19,23 @@ public class TaskData : ITaskData
     }
 
     public Task<IEnumerable<TaskModel>> GetAllTasks() =>
-      _db.LoadData<TaskModel, dynamic>("dbo.spUser_GetAll", new { });
+      _db.LoadData<TaskModel, dynamic>("dbo.spTask_GetAll", new { });
 
     public async Task<TaskModel?> GetTask(int id)
     {
         var result = await _db.LoadData<TaskModel, dynamic>(
-        "dbo.spUser_Get",
+        "dbo.spTask_Get",
         new { Id = id });
         return result.FirstOrDefault();
     }
 
     public Task InsertTask(TaskModel task) =>
-     _db.SaveData("dbo.spUser_Insert",
+     _db.SaveData("dbo.spTask_Insert",
      new { task.Assigner, task.AssignedTo, task.TypeOf, task.Initiation, task.Deadline });
 
     public Task UpdateTask(TaskModel task) =>
-         _db.SaveData("dbo.spUserUpdate", task);
+         _db.SaveData("dbo.spTaskUpdate", task);
 
     public Task DeleteTask(int id) =>
-   _db.SaveData("dbo.spUser_Delete", new { Id = id });
+   _db.SaveData("dbo.spTask_Delete", new { Id = id });
 }

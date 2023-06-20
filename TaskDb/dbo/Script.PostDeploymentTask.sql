@@ -13,7 +13,7 @@ if not exists (select 1 from dbo.[Task])
 begin
 insert into dbo.[Task] (Assigner, AssignedTo, TypeOf, Initiation, Deadline)
 values
-('Yatin', 'Vrajesh', 'development', '2023-06-01', '2023-06-07'),
-('Dipesh', 'Vrajesh', 'development', '2023-06-01',' 2023-06-07');
+('101', '103', 'development', '2023-06-01', '2023-06-07'),
+('102', '103', 'QA', '2023-06-01','2023-06-07');
 end
 

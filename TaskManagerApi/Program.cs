@@ -1,6 +1,6 @@
 
 using DataAccess.DbAccess;
-using TaskManagerApi;
+using TaskManagerApi.Controllers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +12,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<ISqlDataAccess, SqlDataAccess>();
 builder.Services.AddSingleton<ITaskData, TaskData>();
+builder.Services.AddSingleton<IEmployeeData, EmployeeData>();
 
 var app = builder.Build();
 
@@ -28,4 +29,5 @@ app.UseAuthorization();
 
 app.MapControllers();
 app.ConfigureApi();
+app.ConfigureEmployeeApi();
 app.Run();

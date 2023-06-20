@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[spUserUpdate]
+﻿CREATE PROCEDURE [dbo].[spTaskUpdate]
 	@id int,
 	@Assigner nvarchar(50),
 	@AssignedTo nvarchar(50),

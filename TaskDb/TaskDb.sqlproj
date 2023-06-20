@@ -9,8 +9,7 @@
     <ProjectGuid>{41a45970-2db4-4ba7-8489-607cebcd890e}</ProjectGuid>
     <DSP>Microsoft.Data.Tools.Schema.Sql.Sql160DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
-    <RootPath>
-    </RootPath>
+    <RootPath />
     <RootNamespace>TaskDb</RootNamespace>
     <AssemblyName>TaskDb</AssemblyName>
     <ModelCollation>1033, CI</ModelCollation>
@@ -48,7 +47,6 @@
   </PropertyGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
-    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
     <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
     <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
   </PropertyGroup>
@@ -58,18 +56,30 @@
     <Folder Include="Properties" />
     <Folder Include="dbo" />
     <Folder Include="dbo\Tables" />
-    <Folder Include="dbo\StoredProcedures" />
+    <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="dbo\Stored Procedures\Employee_sp" />
+    <Folder Include="dbo\Stored Procedures\Task_sp" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\Task.sql" />
-    <Build Include="dbo\StoredProcedures\spUser_GetAll.sql" />
-    <Build Include="dbo\StoredProcedures\spUser_Delete.sql" />
-    <Build Include="dbo\StoredProcedures\spUser_Get.sql" />
-    <Build Include="dbo\StoredProcedures\spUser_Insert.sql" />
-    <Build Include="dbo\StoredProcedures\spUserUpdate.sql" />
+    <Build Include="dbo\Tables\Employee.sql" />
+    <Build Include="dbo\Stored Procedures\Task_sp\spTask_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\Task_sp\spTask_Get.sql" />
+    <Build Include="dbo\Stored Procedures\Task_sp\spTask_GetAll.sql" />
+    <Build Include="dbo\Stored Procedures\Task_sp\spTask_Insert.sql" />
+    <Build Include="dbo\Stored Procedures\Task_sp\spTaskUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\Employee_sp\spEmployee_GetAll.sql" />
+    <Build Include="dbo\Stored Procedures\Employee_sp\spEmployee_Get.sql" />
+    <Build Include="dbo\Stored Procedures\Employee_sp\spEmployee_Insert.sql" />
+    <Build Include="dbo\Stored Procedures\Employee_sp\spEmployeeUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\Employee_sp\spEmployee_Delete.sql" />
   </ItemGroup>
   <ItemGroup>
-    <PostDeploy Include="dbo\Script.PostDeployment.sql" />
+    <PostDeploy Include="dbo\Script.PostDeploymentTask.sql" />
+    <None Include="dbo\Script.PostDeploymentEmployee.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="TaskDb.refactorlog" />
   </ItemGroup>
   <ItemGroup>
     <None Include="TaskDb.publish.xml" />

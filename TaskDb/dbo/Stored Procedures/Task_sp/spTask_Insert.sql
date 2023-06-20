@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[spUser_Insert]
+﻿CREATE PROCEDURE [dbo].[spTask_Insert]
 	@Assigner nvarchar(50),
 	@AssignedTo nvarchar(50),
 	@TypeOf nvarchar(50),

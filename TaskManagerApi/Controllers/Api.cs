@@ -1,4 +1,4 @@
-﻿namespace TaskManagerApi;
+﻿namespace TaskManagerApi.Controllers;
 
 public static class Api
 {

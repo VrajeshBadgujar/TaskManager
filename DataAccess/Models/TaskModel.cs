@@ -9,9 +9,9 @@ namespace DataAccess.Models;
 public class TaskModel
 {
     public int Id{ get; set; }
-    public string Assigner { get; set; }
 
-    public string AssignedTo { get; set; }
+    public int AssignedTo { get; set; }
+    public int Assigner { get; set; }
 
     public string TypeOf { get; set; }
 
