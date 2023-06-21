@@ -1,10 +1,10 @@
 ﻿CREATE PROCEDURE [dbo].[spTaskUpdate]
 	@id int,
-	@Assigner nvarchar(50),
-	@AssignedTo nvarchar(50),
+	@Assigner smallint,
+	@AssignedTo smallint,
 	@TypeOf nvarchar(50),
-	@Initiation date ,
-	@Deadline date
+	@Initiation datetime ,
+	@Deadline datetime
 	
 AS
 begin
@@ -16,5 +16,5 @@ begin
 	Initiation = @Initiation,
 	Deadline  = @Deadline
 	where
-	Id = @Id;
+	Id = @id;
 end

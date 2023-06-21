@@ -1,9 +1,9 @@
 ﻿CREATE PROCEDURE [dbo].[spTask_Insert]
-	@Assigner nvarchar(50),
-	@AssignedTo nvarchar(50),
+	@Assigner smallint,
+	@AssignedTo smallint,
 	@TypeOf nvarchar(50),
-	@Initiation date ,
-	@Deadline date
+	@Initiation datetime ,
+	@Deadline datetime
 
 AS
 begin

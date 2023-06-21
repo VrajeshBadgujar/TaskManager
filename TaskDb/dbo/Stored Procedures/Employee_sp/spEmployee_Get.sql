@@ -1,5 +1,5 @@
 ﻿CREATE PROCEDURE [dbo].[spEmployee_Get]
-@Id int
+@Id smallint
 AS
 begin
 	SELECT * from dbo.[Employee]

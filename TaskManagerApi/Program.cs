@@ -1,6 +1,7 @@
-
 using DataAccess.DbAccess;
-using TaskManagerApi.Controllers;
+//using TaskManagerApi.Controllers;
+using EmployeeApi.Controllers;
+using TaskApi.Controllers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,6 +29,6 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
-app.ConfigureApi();
-app.ConfigureEmployeeApi();
+//app.ConfigureApi();
+//app.ConfigureEmployeeApi();
 app.Run();

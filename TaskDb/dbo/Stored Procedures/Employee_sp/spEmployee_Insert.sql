@@ -1,10 +1,11 @@
 ﻿CREATE PROCEDURE [dbo].[spEmployee_Insert]
-	@empId int,
+	@empId smallint,
 	@firstName nvarchar(50),
-	@lastName nvarchar(50)
+	@lastName nvarchar(50),
+	@isManager bit
 AS
 begin
-	insert into dbo.Employee (EmployeeId, FirstName, LastName)
+	insert into dbo.Employee (EmployeeId, FirstName, LastName, IsManager)
 	values
-	(@empId, @firstName, @lastName);
+	(@empId, @firstName, @lastName, @isManager);
 end

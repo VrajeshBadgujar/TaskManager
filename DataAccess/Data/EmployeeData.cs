@@ -30,8 +30,8 @@ public class EmployeeData : IEmployeeData
     }
 
     public Task InsertEmployee(EmployeeModel emp) =>
-     _db.SaveData("dbo.spEmployee_Insert",
-     new { emp.EmployeeId, emp.firstName, emp.lastName });
+     _db.SaveData("dbo.spEmployee_Insert", emp);
+     //new { emp.EmployeeId, emp.firstName, emp.lastName, emp.IsManager });
 
     public Task UpdateEmployee(EmployeeModel emp) =>
          _db.SaveData("dbo.spEmployeeUpdate", emp);

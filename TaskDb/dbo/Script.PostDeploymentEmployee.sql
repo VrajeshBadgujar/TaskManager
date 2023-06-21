@@ -11,9 +11,9 @@ Post-Deployment Script Template
 */
 if not exists (select 1 from dbo.[Employee])
 begin
-insert into dbo.[Employee] (EmployeeId, FirstName, LastName)
+insert into dbo.[Employee] (EmployeeId, FirstName, LastName, isManager)
 values
-(101, 'Yatin', 'Patel'),
-(102,'Dipesh', 'Vala'),
-(103, 'Vrajesh', 'Badgujar');
+(101, 'Yatin', 'Patel', 1),
+(102,'Dipesh', 'Vala', 0),
+(103, 'Vrajesh', 'Badgujar', 0);
 end
